@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Python Starter{% endblock %}
+
+{% block content %}
+<div style="text-align: center; padding: 3rem 1rem;">
+    <img src="{{ url_for('static', filename='og.png') }}" alt="Python Starter" style="max-width: 320px; border-radius: 4px; margin-bottom: 2rem;">
+    <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem;">Welcome to Python Starter</h1>
+    <p style="color: #696f8c; font-size: 1.1rem; margin-bottom: 2.5rem;">Your Flask app is up and running on Kamui Platform.</p>
+    <div class="card" style="display: inline-block; text-align: left; width: 100%; max-width: 500px;">
+        <h2 style="font-size: 1.1rem; margin-bottom: 1rem;">Next Steps</h2>
+        <ul style="list-style: none;">
+            <li style="padding: 0.6rem 0; border-bottom: 1px solid #272a3c;">
+                <span style="color: #00e7ad; margin-right: 0.5rem;">&#10003;</span> App deployed successfully
+            </li>
+            <li style="padding: 0.6rem 0; border-bottom: 1px solid #272a3c;">
+                <span style="color: #00e7ad; margin-right: 0.5rem;">&#10003;</span> Database connected
+            </li>
+            <li style="padding: 0.6rem 0;">
+                <span style="color: #696f8c; margin-right: 0.5rem;">&#9656;</span>
+                <a href="/greetings" style="color: #ffffff;">Try the Greetings page</a>
+            </li>
+        </ul>
+    </div>
+    <div style="margin-top: 2rem;">
+        <a href="/greetings" style="display: inline-block; padding: 0.75rem 2rem; background-color: #d91a01; color: #ffffff; text-decoration: none; border-radius: 6px; font-size: 1.1rem; font-weight: 500; transition: background-color 0.2s;">Get Started</a>
+    </div>
+</div>
+{% endblock %}

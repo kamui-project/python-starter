@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Greetings - Python Starter{% endblock %}
+
+{% block content %}
+<h1>Greetings</h1>
+<div class="card">
+    <form method="POST" action="/greetings">
+        <input type="text" name="message" placeholder="Enter a message" required>
+        <button type="submit">Send</button>
+    </form>
+
+    {% if greetings %}
+    <ul>
+        {% for greeting in greetings %}
+        <li>
+            {{ greeting.message }}
+            <span class="time">{{ greeting.created_at.strftime('%Y-%m-%d %H:%M') }}</span>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No messages yet.</p>
+    {% endif %}
+</div>
+{% endblock %}

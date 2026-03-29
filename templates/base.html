@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Python Starter{% endblock %}</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='logo.png') }}">
+    <meta property="og:image" content="{{ url_for('static', filename='og.png') }}">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #17161c;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        a {
+            color: #c2c7e0;
+        }
+        nav {
+            background-color: #17161c;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid #272a3c;
+        }
+        nav a {
+            color: #c2c7e0;
+            text-decoration: none;
+            margin-right: 1.5rem;
+            font-weight: 500;
+        }
+        nav a:hover {
+            color: #ffffff;
+        }
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        h1 {
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+        .card {
+            background: #1e2130;
+            border: 1px solid #272a3c;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.1), 0 1px 5px 0 rgba(0, 0, 0, 0.3);
+        }
+        form {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        input[type="text"] {
+            flex: 1;
+            padding: 0.5rem 1rem;
+            background-color: #1e2130;
+            border: 1px solid #3c405e;
+            border-radius: 6px;
+            font-size: 1rem;
+            color: #ffffff;
+        }
+        input[type="text"]::placeholder {
+            color: #696f8c;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #ffffff;
+        }
+        button {
+            padding: 0.5rem 1.5rem;
+            background-color: #d91a01;
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #e04020;
+        }
+        ul {
+            list-style: none;
+        }
+        ul li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #272a3c;
+        }
+        ul li:last-child {
+            border-bottom: none;
+        }
+        .time {
+            color: #696f8c;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/greetings">Greetings</a>
+    </nav>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
