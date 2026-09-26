@@ -1,4 +1,3 @@
-import os
 import logging
 from logging.config import fileConfig
 
@@ -10,16 +9,16 @@ config = context.config
 fileConfig(config.config_file_name)
 logger = logging.getLogger("alembic.env")
 
-database_url = os.environ.get("DATABASE_URL", "sqlite:///local.db")
-config.set_main_option("sqlalchemy.url", database_url)
-
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
+from config import database_url
 from extensions import db
 import models
+
+config.set_main_option("sqlalchemy.url", database_url().replace("%", "%%"))
 
 target_metadata = db.metadata
 
